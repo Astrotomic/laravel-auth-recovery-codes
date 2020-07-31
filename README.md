@@ -18,6 +18,8 @@ You can install the package via composer:
 composer require astrotomic/laravel-auth-recovery-codes
 ```
 
+And publish the config via artisan:
+
 ```bash
 php artisan vendor:publish --provider="Astrotomic\AuthRecoveryCodes\AuthRecoveryCodesServiceProvider" --tag=config
 ```
