@@ -50,7 +50,7 @@ By default the trait uses a `recovery_codes` attribute/column - you can change t
 class User extends Model
 {
     use Recoverable;
-    
+
     protected string $recoveryCodesName = 'mfa_recovery_codes';
 
     protected $casts = [
@@ -61,10 +61,11 @@ class User extends Model
 
 To set the new recovery codes to your model you should use the `setRecoveryCodes()` method because this method automatically hashes the recovery codes, if not already hashed.
 This step is important for security because with this step only the user has access to the recovery codes and no one else.
-The following snippet is an example of a possible controller action 
-- generating the codes
-- setting and saving the codes on the user model
-- responding with the codes to the user (the one and only time anyone can get/read the plaintext recovery codes)
+The following snippet is an example of a possible controller action
+
+-   generating the codes
+-   setting and saving the codes on the user model
+-   responding with the codes to the user (the one and only time anyone can get/read the plaintext recovery codes)
 
 ```php
 $codes = User::generateRecoveryCodes();
@@ -109,8 +110,9 @@ class AddRecoveryCodesToUsersTable extends Migration
 
 Now that you have setup your app to generate and store recovery codes you should add the logic to recover an account.
 The `Recoverable` trait comes with two methods to help you with this task.
-- `isValidRecoveryCode()` return a `bool` and tells you if any of the saved recovery codes matches the input
-- `useRecoveryCode()` removes the matching hash from the array and sets the array of remaining recovery codes
+
+-   `isValidRecoveryCode()` return a `bool` and tells you if any of the saved recovery codes matches the input
+-   `useRecoveryCode()` removes the matching hash from the array and sets the array of remaining recovery codes
 
 ```php
 use Astrotomic\AuthRecoveryCodes\Recoverable;
@@ -125,18 +127,18 @@ class RecoverController
     {
         /** @var Model|Recoverable $user */
         $user = User::whereEmail($request->email)->firstOrFail();
-        
+
         abort_unless(Hash::check($request->password, $user->password), Response::HTTP_NOT_FOUND);
-        
+
         abort_unless($user->isValidRecoveryCode($request->recovery_code), Response::HTTP_NOT_FOUND);
-        
+
         // do something to allow the user to recover the account
         // - log him in and redirect to account/security settings
         // - disable 2FA
         // - send an email with a signed link to do something
 
         $user->useRecoveryCode($request->recovery_code)->save();
-        
+
         // you should check if user has remaining recovery codes
         // if not you should re-generate some and tell the user
         // for sure you can trigger this before all codes are used
@@ -144,9 +146,9 @@ class RecoverController
         // if he's running out of remaining ones
         if(empty($user->getRecoveryCodes())) {
             $codes = User::generateRecoveryCodes();
-            
+
             $user->setRecoveryCodes($codes)->save();
-            
+
             return response()->json($codes);
         }
     }
