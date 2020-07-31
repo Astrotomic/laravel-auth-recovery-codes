@@ -1,0 +1,59 @@
+{
+    "name": "astrotomic/laravel-auth-recovery-codes",
+    "description": "",
+    "keywords": [
+        "astrotomic",
+        "laravel",
+        "authentication",
+        "recovery-codes",
+        "2fa",
+        "mfa",
+        "two-factor-authentication",
+        "multi-factor-authentication"
+    ],
+    "homepage": "https://github.com/astrotomic/laravel-auth-recovery-codes",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Tom Witkowski",
+            "email": "gummibeer@astrotomic.info",
+            "homepage": "https://gummibeer.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "astrotomic/php-conditional-proxy": "^0.2.0",
+        "illuminate/support": "^7.0",
+        "pragmarx/recovery": "^0.1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Astrotomic\\AuthRecoveryCodes\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Astrotomic\\AuthRecoveryCodes\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Astrotomic\\AuthRecoveryCodes\\AuthRecoveryCodesServiceProvider"
+            ]
+        }
+    }
+}
