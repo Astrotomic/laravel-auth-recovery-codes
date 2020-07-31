@@ -25,12 +25,14 @@
     "require": {
         "php": "^7.4",
         "astrotomic/php-conditional-proxy": "^0.2.0",
+        "illuminate/contracts": "^7.0",
+        "illuminate/database": "^7.0",
         "illuminate/support": "^7.0",
         "pragmarx/recovery": "^0.1.0"
     },
     "require-dev": {
         "orchestra/testbench": "^5.0",
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^9.1"
     },
     "config": {
         "sort-packages": true
