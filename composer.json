@@ -8,7 +8,10 @@
         "authentication",
         "recovery-codes",
         "2fa",
+        "tfa",
         "mfa",
+        "two factor authentication",
+        "multi factor authentication",
         "two-factor-authentication",
         "multi-factor-authentication"
     ],
