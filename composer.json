@@ -1,7 +1,7 @@
 {
     "name": "astrotomic/laravel-auth-recovery-codes",
     "type": "library",
-    "description": "",
+    "description": "This package provides Laravel bindings and a Eloquent/Model trait for pragmarx/recovery package.",
     "keywords": [
         "astrotomic",
         "laravel",

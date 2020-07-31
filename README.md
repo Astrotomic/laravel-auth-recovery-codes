@@ -8,7 +8,8 @@
 [![StyleCI](https://styleci.io/repos/284008331/shield)](https://styleci.io/repos/284008331)
 [![Total Downloads](https://img.shields.io/packagist/dt/astrotomic/laravel-auth-recovery-codes.svg?label=Downloads&style=flat-square)](https://packagist.org/packages/astrotomic/laravel-auth-recovery-codes)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package provides Laravel bindings and a Eloquent/Model trait for [pragmarx/recovery](https://github.com/antonioribeiro/recovery) package.
+It allows you to easily handle recovery codes, needed for 2FA setups and only care about the app logic.
 
 ## Installation
 
