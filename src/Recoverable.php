@@ -1,6 +1,7 @@
 <?php
 
 namespace Astrotomic\AuthRecoveryCodes;
+
 use Astrotomic\AuthRecoveryCodes\Exceptions\InvalidRecoveryCodeException;
 use Astrotomic\AuthRecoveryCodes\Exceptions\MissingRecoveryCodesException;
 use Illuminate\Database\Eloquent\Model;
@@ -17,7 +18,7 @@ trait Recoverable
 
     public function isValidRecoveryCode(string $input): bool
     {
-        foreach($this->getRecoveryCodes() as $code) {
+        foreach ($this->getRecoveryCodes() as $code) {
             if (Hash::check($input, $code)) {
                 return true;
             }
@@ -34,7 +35,7 @@ trait Recoverable
 
         $hash = Arr::first(
             $codes,
-            fn(string $code): bool => Hash::check($input, $code)
+            fn (string $code): bool => Hash::check($input, $code)
         );
 
         throw_if(empty($hash), InvalidRecoveryCodeException::make($this, $input));

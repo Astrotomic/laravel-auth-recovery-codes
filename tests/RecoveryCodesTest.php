@@ -2,10 +2,7 @@
 
 namespace Astrotomic\AuthRecoveryCodes\Tests;
 
-use Astrotomic\AuthRecoveryCodes\AuthRecoveryCodesServiceProvider;
 use Astrotomic\AuthRecoveryCodes\RecoveryCodes;
-use Illuminate\Config\Repository;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 final class RecoveryCodesTest extends TestCase
 {
@@ -104,7 +101,7 @@ final class RecoveryCodesTest extends TestCase
 
         $schema = preg_replace_callback(
             '/(\#|\%|\_|\^)(\d+)/',
-            fn(array $m): string => "{$m[1]}{{$m[2]}}",
+            fn (array $m): string => "{$m[1]}{{$m[2]}}",
             $pattern
         );
         $pattern = str_replace(
@@ -113,7 +110,7 @@ final class RecoveryCodesTest extends TestCase
             $schema
         );
 
-        foreach($codes as $code) {
+        foreach ($codes as $code) {
             static::assertMatchesRegularExpression(
                 '/^'.$pattern.'$/',
                 $code

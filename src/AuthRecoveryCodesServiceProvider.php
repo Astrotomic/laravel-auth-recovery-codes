@@ -32,7 +32,7 @@ class AuthRecoveryCodesServiceProvider extends ServiceProvider
                 ->setChars(config('recoverycodes.chars'))
                 ->setBlockSeparator(config('recoverycodes.separator'))
                 ->when(config('recoverycodes.numeric'))->numeric()
-                ->when(!config('recoverycodes.numeric'))->alpha()
+                ->when(! config('recoverycodes.numeric'))->alpha()
                 ->when(config('recoverycodes.casing') === 'lower')->lowercase()
                 ->when(config('recoverycodes.casing') === 'upper')->uppercase()
                 ->when(config('recoverycodes.casing') === 'mixed')->mixedcase();

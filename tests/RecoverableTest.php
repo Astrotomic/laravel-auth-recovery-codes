@@ -2,13 +2,9 @@
 
 namespace Astrotomic\AuthRecoveryCodes\Tests;
 
-use Astrotomic\AuthRecoveryCodes\AuthRecoveryCodesServiceProvider;
-use Astrotomic\AuthRecoveryCodes\RecoveryCodes;
 use Astrotomic\AuthRecoveryCodes\Tests\Models\User;
-use Illuminate\Config\Repository;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 final class RecoverableTest extends TestCase
 {
@@ -18,7 +14,7 @@ final class RecoverableTest extends TestCase
         $user = new User();
         $user->setRecoveryCodes(User::generateRecoveryCodes());
 
-        foreach($user->getRecoveryCodes() as $hash) {
+        foreach ($user->getRecoveryCodes() as $hash) {
             static::assertSame('2y', Hash::info($hash)['algo']);
             static::assertSame('bcrypt', Hash::info($hash)['algoName']);
         }
@@ -32,7 +28,7 @@ final class RecoverableTest extends TestCase
         $hashedCodes = $user->getRecoveryCodes();
         $user->setRecoveryCodes($user->getRecoveryCodes());
 
-        foreach($hashedCodes as $hashedCode) {
+        foreach ($hashedCodes as $hashedCode) {
             static::assertTrue(in_array($hashedCode, $user->getRecoveryCodes()));
         }
     }
@@ -45,7 +41,7 @@ final class RecoverableTest extends TestCase
         $user = new User();
         $user->setRecoveryCodes($codes);
 
-        foreach($codes as $code) {
+        foreach ($codes as $code) {
             static::assertTrue($user->isValidRecoveryCode($code));
         }
 
