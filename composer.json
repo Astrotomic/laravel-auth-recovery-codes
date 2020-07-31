@@ -1,5 +1,6 @@
 {
     "name": "astrotomic/laravel-auth-recovery-codes",
+    "type": "library",
     "description": "",
     "keywords": [
         "astrotomic",
@@ -13,7 +14,6 @@
     ],
     "homepage": "https://github.com/astrotomic/laravel-auth-recovery-codes",
     "license": "MIT",
-    "type": "library",
     "authors": [
         {
             "name": "Tom Witkowski",
@@ -32,6 +32,16 @@
         "orchestra/testbench": "^5.0",
         "phpunit/phpunit": "^9.0"
     },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Astrotomic\\AuthRecoveryCodes\\AuthRecoveryCodesServiceProvider"
+            ]
+        }
+    },
     "autoload": {
         "psr-4": {
             "Astrotomic\\AuthRecoveryCodes\\": "src"
@@ -45,15 +55,5 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Astrotomic\\AuthRecoveryCodes\\AuthRecoveryCodesServiceProvider"
-            ]
-        }
     }
 }
