@@ -2,7 +2,6 @@
 
 namespace Astrotomic\AuthRecoveryCodes\Exceptions;
 
-use Astrotomic\AuthRecoveryCodes\Recoverable;
 use OutOfBoundsException;
 
 class InvalidRecoveryCodeException extends OutOfBoundsException
