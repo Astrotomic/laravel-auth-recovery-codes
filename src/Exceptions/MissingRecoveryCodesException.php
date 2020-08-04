@@ -2,19 +2,18 @@
 
 namespace Astrotomic\AuthRecoveryCodes\Exceptions;
 
-use Astrotomic\AuthRecoveryCodes\Recoverable;
 use OutOfBoundsException;
 
 class MissingRecoveryCodesException extends OutOfBoundsException
 {
-    protected ?Recoverable $recoverable;
+    protected $recoverable;
 
-    public static function make(Recoverable $model): self
+    public static function make($model): self
     {
         return (new static())->setRecoverable($model);
     }
 
-    public function setRecoverable(Recoverable $model): self
+    public function setRecoverable($model): self
     {
         $this->recoverable = $model;
 
@@ -23,7 +22,7 @@ class MissingRecoveryCodesException extends OutOfBoundsException
         return $this;
     }
 
-    public function getRecoverable(): ?Recoverable
+    public function getRecoverable()
     {
         return $this->recoverable;
     }

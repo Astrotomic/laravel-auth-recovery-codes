@@ -7,17 +7,17 @@ use OutOfBoundsException;
 
 class InvalidRecoveryCodeException extends OutOfBoundsException
 {
-    protected ?Recoverable $recoverable;
+    protected $recoverable;
     protected ?string $recoveryCode;
 
-    public static function make(Recoverable $recoverable, string $recoveryCode): self
+    public static function make($recoverable, string $recoveryCode): self
     {
         return (new static())
             ->setRecoverable($recoverable)
             ->setRecoveryCode($recoveryCode);
     }
 
-    public function setRecoverable(Recoverable $recoverable): self
+    public function setRecoverable($recoverable): self
     {
         $this->recoverable = $recoverable;
 
@@ -26,7 +26,7 @@ class InvalidRecoveryCodeException extends OutOfBoundsException
         return $this;
     }
 
-    public function getRecoverable(): ?Recoverable
+    public function getRecoverable()
     {
         return $this->recoverable;
     }
