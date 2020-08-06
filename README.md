@@ -3,6 +3,7 @@
 [![Latest Version](http://img.shields.io/packagist/v/astrotomic/laravel-auth-recovery-codes.svg?label=Release&style=for-the-badge)](https://packagist.org/packages/astrotomic/laravel-auth-recovery-codes)
 [![MIT License](https://img.shields.io/github/license/Astrotomic/laravel-auth-recovery-codes.svg?label=License&color=blue&style=for-the-badge)](https://github.com/Astrotomic/laravel-auth-recovery-codes/blob/master/LICENSE)
 [![Offset Earth](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-green?style=for-the-badge)](https://plant.treeware.earth/Astrotomic/laravel-auth-recovery-codes)
+[![Larabelles](https://img.shields.io/badge/Larabelles-%F0%9F%A6%84-lightpink?style=for-the-badge)](https://www.larabelles.com/)
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Astrotomic/laravel-auth-recovery-codes/run-tests?style=flat-square&logoColor=white&logo=github&label=Tests)](https://github.com/Astrotomic/laravel-auth-recovery-codes/actions?query=workflow%3Arun-tests)
 [![StyleCI](https://styleci.io/repos/284008331/shield)](https://styleci.io/repos/284008331)
