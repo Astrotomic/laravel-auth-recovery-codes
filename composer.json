@@ -26,16 +26,16 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4 || ^8.0",
         "astrotomic/php-conditional-proxy": "^0.2.0",
-        "illuminate/contracts": "^7.0",
-        "illuminate/database": "^7.0",
-        "illuminate/support": "^7.0",
-        "pragmarx/recovery": "^0.1.0"
+        "illuminate/contracts": "^7.0 || ^8.0",
+        "illuminate/database": "^7.0 || ^8.0",
+        "illuminate/support": "^7.0 || ^8.0",
+        "pragmarx/recovery": "^0.2.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^5.0",
-        "phpunit/phpunit": "^9.1"
+        "orchestra/testbench": "^5.0 || ^6.0",
+        "phpunit/phpunit": "^9.3"
     },
     "config": {
         "sort-packages": true
