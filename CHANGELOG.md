@@ -4,8 +4,8 @@ All notable changes to `laravel-auth-recovery-codes` will be documented in this 
 
 ## 0.2.0 - 2021-03-30
 
-- add Laravel 8 support
-- add PHP 8 support
+-   add Laravel 8 support
+-   add PHP 8 support
 
 ## 0.1.1 - 2020-08-04
 
