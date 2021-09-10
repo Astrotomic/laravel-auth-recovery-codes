@@ -135,7 +135,7 @@ class RecoverController
         abort_unless($user->isValidRecoveryCode($request->recovery_code), Response::HTTP_NOT_FOUND);
 
         // do something to allow the user to recover the account
-        // - log him in and redirect to account/security settings
+        // - log them in and redirect to account/security settings
         // - disable 2FA
         // - send an email with a signed link to do something
 
